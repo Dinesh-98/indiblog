@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{% endblock title %}
+{% block content %}
+<br><br>
+<div class="container">
+        <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Date of Birth</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% if obj %}
+                    {% for objs in obj %}
+                  <tr>
+                    <td>{{ objs.first_name }}</td>
+                    <td>{{ objs.last_name }}</td>
+                    <td>{{ objs.address }}</td>
+                    <td>{{ objs.dob }}</td>
+                  </tr>
+                  {% endfor %}
+                  {% endif %}
+                </tbody>
+              </table>
+</div>
+{% endblock content %}
